@@ -1,4 +1,4 @@
-package br.com.exemplo.demomongodbapi.config;
+package br.com.exemplo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

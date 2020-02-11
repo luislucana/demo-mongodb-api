@@ -1,4 +1,4 @@
-package br.com.exemplo.demomongodbapi;
+package br.com.exemplo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

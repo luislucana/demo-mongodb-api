@@ -1,42 +1,39 @@
-package br.com.exemplo.demomongodbapi.config;
+package br.com.exemplo.config;
+
+import com.mongodb.MongoClient;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.convert.converter.Converter;
+import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import java.util.ArrayList;
 import java.util.List;
 
 //import converter.ZonedDateTimeReadConverter;
 //import converter.ZonedDateTimeWriteConverter;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.convert.converter.Converter;
-import org.springframework.data.mongodb.MongoDbFactory;
-import org.springframework.data.mongodb.MongoTransactionManager;
-import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 //import org.springframework.data.mongodb.core.convert.MongoCustomConversions;
-import org.springframework.data.mongodb.gridfs.GridFsTemplate;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-
 //import com.baeldung.converter.UserWriterConverter;
 //import com.baeldung.event.CascadeSaveMongoEventListener;
 //import com.baeldung.event.UserCascadeSaveMongoEventListener;
-import com.mongodb.MongoClient;
 
-@Configuration
-@EnableMongoRepositories(basePackages = "br.com")
-public class MongoConfig extends AbstractMongoConfiguration {
+//@Configuration
+//@EnableMongoRepositories(basePackages = "br.com")
+//public class MongoConfig extends AbstractMongoConfiguration {
+public class MongoConfig {
 
     private final List<Converter<?, ?>> converters = new ArrayList<Converter<?, ?>>();
 
-    @Override
+    //@Override
     protected String getDatabaseName() {
         return "test";
     }
 
-    @Override
+    //@Override
     public MongoClient mongoClient() {
         return new MongoClient("127.0.0.1", 27017);
     }
 
-    @Override
+    //@Override
     public String getMappingBasePackage() {
         return "br.com";
     }
@@ -59,13 +56,13 @@ public class MongoConfig extends AbstractMongoConfiguration {
         return new MongoCustomConversions(converters);
     }*/
 
-    @Bean
+    /*@Bean
     public GridFsTemplate gridFsTemplate() throws Exception {
         return new GridFsTemplate(mongoDbFactory(), mappingMongoConverter());
-    }
+    }*/
 
-    @Bean
+    /*@Bean
     MongoTransactionManager transactionManager(MongoDbFactory dbFactory) {
         return new MongoTransactionManager(dbFactory);
-    }
+    }*/
 }

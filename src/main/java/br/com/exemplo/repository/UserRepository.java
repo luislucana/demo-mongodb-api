@@ -1,14 +1,11 @@
-package br.com.exemplo.demomongodbapi.repository;
+package br.com.exemplo.repository;
 
-import java.util.List;
-
-import br.com.exemplo.demomongodbapi.model.User;
+import br.com.exemplo.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
-import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
-public interface UserRepository extends MongoRepository<User, String>, QuerydslPredicateExecutor<User> {
-    @Query("{ 'name' : ?0 }")
+//public interface UserRepository extends MongoRepository<User, String>, QuerydslPredicateExecutor<User> {
+public interface UserRepository extends MongoRepository<User, String> {
+    /*@Query("{ 'name' : ?0 }")
     List<User> findUsersByName(String name);
 
     @Query("{ 'age' : { $gt: ?0, $lt: ?1 } }")
@@ -31,5 +28,10 @@ public interface UserRepository extends MongoRepository<User, String>, QuerydslP
     List<User> findNameAndId();
 
     @Query(value = "{}", fields = "{_id : 0}")
-    List<User> findNameAndAgeExcludeId();
+    List<User> findNameAndAgeExcludeId();*/
+
+    //@Override
+    //public User findOne(String id) {
+        //return personCollection.find(eq("_id", new ObjectId(id))).first();
+    //}
 }

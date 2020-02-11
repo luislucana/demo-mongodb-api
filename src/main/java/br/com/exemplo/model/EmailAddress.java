@@ -1,4 +1,4 @@
-package br.com.exemplo.demomongodbapi.model;
+package br.com.exemplo.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

@@ -6,9 +6,9 @@ import static org.junit.Assert.assertThat;
 import java.util.Iterator;
 import java.util.List;
 
-import br.com.exemplo.demomongodbapi.config.MongoConfig;
-import br.com.exemplo.demomongodbapi.model.EmailAddress;
-import br.com.exemplo.demomongodbapi.model.User;
+import br.com.exemplo.config.MongoConfig;
+import br.com.exemplo.model.EmailAddress;
+import br.com.exemplo.model.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,6 +1,6 @@
-package br.com.exemplo.demomongodbapi.model;
+package br.com.exemplo.model;
 
-import br.com.exemplo.demomongodbapi.annotation.CascadeSave;
+import br.com.exemplo.annotation.CascadeSave;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
