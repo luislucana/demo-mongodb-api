@@ -7,6 +7,9 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 import com.mongodb.MongoClient;
 
+/**
+ * Configuracao para o MongoTemplate
+ */
 @Configuration
 @EnableMongoRepositories(basePackages = "br.com")
 public class SimpleMongoConfig {

@@ -13,6 +13,9 @@ import org.springframework.context.annotation.Configuration;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
+/**
+ * Configuracao para o MongoRepository
+ */
 @Configuration
 public class SpringConfiguration {
 
@@ -28,5 +31,4 @@ public class SpringConfiguration {
                 .codecRegistry(codecRegistry)
                 .build());
     }
-
 }
