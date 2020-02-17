@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * https://github.com/joshlong/bookmarks/tree/tutorial
  * https://www.mongodb.com/blog/post/rest-apis-with-java-spring-boot-and-mongodb
  * https://www.baeldung.com/java-mongodb-aggregations
+ * https://www.baeldung.com/spring-data-mongodb-guide
  */
 @SpringBootApplication
 public class DemoMongodbApiApplication {
