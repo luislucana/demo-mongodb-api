@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-@Document
+@Document(collection = "persons")
 @JsonInclude(Include.NON_NULL)
 public class Person {
 

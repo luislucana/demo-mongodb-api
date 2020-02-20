@@ -44,7 +44,8 @@ public class PersonController {
 
     @GetMapping("/persons")
     public List<Person> getPersons() {
-        return personRepository.findAll();
+        return outroRepository.findAll();
+        //return personRepository.findAll();
     }
 
     @GetMapping("/person/{id}")
