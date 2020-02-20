@@ -82,3 +82,6 @@ db.alunos.find().pretty()
 		]
 	}
 ]
+
+
+mongod --port 27017 --dbpath /Progra~1/MongoDB/Server/4.2/data --replSet rs0 --bind_ip localhost,<127.0.0.1>
