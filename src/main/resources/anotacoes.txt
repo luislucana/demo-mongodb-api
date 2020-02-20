@@ -1,0 +1,50 @@
+VANTAGENS E DESVANTAGENS:
+==================================================================================================
+Uma situação onde o MongoDB é bastante usado é quando precisamos realizar buscas por proximidade,
+como, por exemplo, localizar a pizzaria mais próxima de você.
+
+Situações onde o uso do MongoDB não é indicado são cenários onde precisamos fazer muitas
+operações de agregação em uma única query, isso tem muito custo para o MongoDB.
+
+--------------------------------------------------------------------------------------------------
+db.alunos.insert(
+{
+	"nome" : "Paulo",
+	"data_nascimento" : new Date(1979, 12, 31),
+	"notas": [10, 9, 7],
+	"curso" : {
+	    "nome" : "Ciências da computação"
+	},
+	"habilidades" : [
+        {
+	        "nome" : "Inglês",
+	        "nível" : "Avançado"
+        },
+        {
+	        "nome" : "Francês",
+	        "nível" : "Avançado"
+        }
+    ]
+}
+)
+
+db.alunos.insert(
+{
+	"nome" : "Daniela",
+	"data_nascimento" : new Date(1995, 07, 17),
+	"notas": [10, 9, 7],
+	"curso" : {
+	    "nome" : "Moda"
+	},
+	"habilidades" : [
+        {
+	        "nome" : "Alemão",
+	        "nível" : "Básico"
+        }
+    ]
+}
+)
+
+db.alunos.remove( {"_id": ObjectId("5e4a90d6eda41a47e9a79c8e")});
+
+db.alunos.find().pretty()
