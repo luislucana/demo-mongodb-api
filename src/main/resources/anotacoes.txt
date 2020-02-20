@@ -7,26 +7,7 @@ Situações onde o uso do MongoDB não é indicado são cenários onde precisamo
 operações de agregação em uma única query, isso tem muito custo para o MongoDB.
 
 --------------------------------------------------------------------------------------------------
-db.alunos.insert(
-{
-	"nome" : "Paulo",
-	"data_nascimento" : new Date(1979, 12, 31),
-	"notas": [10, 9, 7],
-	"curso" : {
-	    "nome" : "Ciências da computação"
-	},
-	"habilidades" : [
-        {
-	        "nome" : "Inglês",
-	        "nível" : "Avançado"
-        },
-        {
-	        "nome" : "Francês",
-	        "nível" : "Avançado"
-        }
-    ]
-}
-)
+
 
 db.alunos.insert(
 {
@@ -48,3 +29,56 @@ db.alunos.insert(
 db.alunos.remove( {"_id": ObjectId("5e4a90d6eda41a47e9a79c8e")});
 
 db.alunos.find().pretty()
+--------------------------------------------------------------------------------------------------
+[
+	{
+		"firstName": "José",
+		"lastName": "da Silva",
+		"age": 18,
+		"address": {
+			"street": "Rua Sem Saída",
+			"number": 1234,
+			"postcode": "12389-666",
+			"city": "São Paulo",
+			"country": "Brasil"
+		},
+		"insurance": true,
+		"cars": [
+			{
+				"brand": "Hyundai",
+				"model": "HB20",
+				"maxSpeedKmH": 299.5
+			},
+			{
+				"brand": "Kia",
+				"model": "Sportage",
+				"maxSpeedKmH": 122.99
+			}
+		]
+	},
+	{
+		"firstName": "João",
+		"lastName": "Pereira",
+		"age": 28,
+		"address": {
+			"street": "Rua Pedro Alvares Cabral",
+			"number": 24,
+			"postcode": "01234-125",
+			"city": "São Paulo",
+			"country": "Brasil"
+		},
+		"insurance": false,
+		"cars": [
+			{
+				"brand": "Fiat",
+				"model": "Uno",
+				"maxSpeedKmH": 99.5
+			},
+			{
+				"brand": "Honda",
+				"model": "Fit",
+				"maxSpeedKmH": 222.99
+			}
+		]
+	}
+]

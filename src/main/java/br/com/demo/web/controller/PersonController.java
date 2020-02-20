@@ -1,9 +1,11 @@
 package br.com.demo.web.controller;
 
 import br.com.demo.persistence.model.Person;
+import br.com.demo.persistence.repository.OutroRepository;
 import br.com.demo.persistence.repository.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +22,9 @@ public class PersonController {
 
     private final PersonRepository personRepository;
 
+    @Autowired
+    private OutroRepository outroRepository;
+
     public PersonController(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
@@ -33,7 +38,8 @@ public class PersonController {
     @PostMapping("/persons")
     @ResponseStatus(HttpStatus.CREATED)
     public List<Person> postPersons(@RequestBody List<Person> persons) {
-        return personRepository.saveAll(persons);
+        //return personRepository.saveAll(persons);
+        return outroRepository.saveAll(persons);
     }
 
     @GetMapping("/persons")
@@ -91,10 +97,10 @@ public class PersonController {
         return personRepository.getAverageAge();
     }
 
-    @ExceptionHandler(RuntimeException.class)
+    /*@ExceptionHandler(RuntimeException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public final Exception handleAllExceptions(RuntimeException e) {
         LOGGER.error("Internal server error.", e);
         return e;
-    }
+    }*/
 }

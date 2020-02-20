@@ -14,15 +14,13 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import static com.google.common.base.Predicates.not;
-
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig extends WebMvcConfigurationSupport {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
-                .apis(RequestHandlerSelectors.basePackage("com.mongodb.starter"))
+                .apis(RequestHandlerSelectors.basePackage("br.com.demo"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(info());
@@ -30,12 +28,10 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 
     private ApiInfo info() {
         return new ApiInfoBuilder().title("Quick start project")
-                .description("Quick start project using Java, Spring boot and MongoDB")
-                .contact(new Contact("Maxime Beugnet", "https://github.com/MaBeuLux88",
-                        "maxime.beugnet@gmail.com"))
+                .description("Quick start project using Java, Spring boot and MongoDB (seus otários!)")
+                .contact(new Contact("Luis Lucana", "https://github.com/luislucana",
+                        "luislucana@gmail.com"))
                 .version("1.0.0")
-                .license("Apache License Version 2.0")
-                .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")
                 .build();
     }
 

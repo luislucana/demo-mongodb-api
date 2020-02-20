@@ -1,5 +1,6 @@
 package br.com.demo.persistence.repository;
 
+import br.com.demo.config.SpringConfiguration;
 import br.com.demo.dto.AverageAgeDTO;
 import br.com.demo.persistence.model.Person;
 import com.mongodb.ReadConcern;
@@ -17,6 +18,7 @@ import org.bson.BsonNull;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
@@ -36,18 +38,22 @@ import static java.util.Arrays.asList;
 @Repository
 public class MongoDBPersonRepository implements PersonRepository {
 
+    @Value( "${spring.data.mongodb.database}" )
+    private String databaseName;
+
     private static final TransactionOptions txnOptions = TransactionOptions.builder()
             .readPreference(ReadPreference.primary())
             .readConcern(ReadConcern.MAJORITY)
             .writeConcern(WriteConcern.MAJORITY)
             .build();
+
     @Autowired
     private MongoClient client;
     private MongoCollection<Person> personCollection;
 
     @PostConstruct
     void init() {
-        personCollection = client.getDatabase("test").getCollection("persons", Person.class);
+        personCollection = client.getDatabase(databaseName).getCollection("persons", Person.class);
     }
 
     @Override
