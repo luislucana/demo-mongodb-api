@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * https://www.mongodb.com/blog/post/mongodb-multi-document-acid-transactions-general-availability
  * https://medium.com/oril/uploading-files-to-aws-s3-bucket-using-spring-boot-483fcb6f8646
  * https://github.com/joshlong/bookmarks/tree/tutorial
+ * https://blog.marcosbarbero.com/pt_BR/multiple-mongodb-connectors-in-spring-boot/
  */
 @SpringBootApplication
 public class ApplicationStarter {
