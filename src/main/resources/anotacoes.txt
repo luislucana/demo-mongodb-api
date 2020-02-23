@@ -26,6 +26,96 @@ db.alunos.insert(
 }
 )
 
+db.alunos.save(
+{
+	"nome" : "Daniela",
+	"data_nascimento" : new Date(1995, 07, 17),
+	"notas": [10, 9, 7],
+	"curso" : {
+	    "nome" : "Moda"
+	},
+	"habilidades" : [
+        {
+	        "nome" : "Alemão",
+	        "nível" : "Básico"
+        }
+    ]
+}
+)
+
+db.alunos.save(
+{
+	"nome" : "Jose",
+	"data_nascimento" : new Date(1917, 12, 17),
+	"notas": [10, 9, 7],
+	"curso" : {
+	    "nome" : "Moda"
+	},
+	"habilidades" : [
+        {
+	        "nome" : "Alemão",
+	        "nível" : "Básico"
+        }
+    ]
+}
+)
+
+db.alunos.insert(
+{
+    "_id": ObjectId("5e4fce20ba9cff7a967e2a60"),
+	"nome" : "asdasdasd",
+	"data_nascimento" : new Date(1946, 07, 17),
+	"notas": [10, 9, 7],
+	"curso" : {
+	    "nome" : "Moda"
+	},
+	"habilidades" : [
+        {
+	        "nome" : "Russo",
+	        "nível" : "Básico"
+        }
+    ]
+}
+)
+
+db.alunos.save(
+{
+    "_id": ObjectId("5e4fce20ba9cff7a967e2a61"),
+	"nome" : "asdasdasd",
+	"data_nascimento" : new Date(1946, 07, 17),
+	"notas": [10, 9, 7],
+	"curso" : {
+	    "nome" : "Moda"
+	},
+	"habilidades" : [
+        {
+	        "nome" : "Russo",
+	        "nível" : "Básico"
+        }
+    ]
+}
+)
+
+db.alunos.save(
+{
+    "_id": ObjectId("5e4fce20ba9cff7a967e2a59"),
+	"nome" : "asdasdasd",
+	"data_nascimento" : new Date(1946, 07, 17),
+	"notas": [10, 9, 7],
+	"curso" : {
+	    "nome" : "Moda"
+	},
+	"habilidades" : [
+        {
+	        "nome" : "Russo",
+	        "nível" : "Básico"
+        }
+    ]
+}
+)
+
+{"_id":{"$oid":"5e4fce20ba9cff7a967e2a61"},"nome":"Jose","data_nascimento":{"$date":{"$numberLong":"-1639602000000"}},"notas":[{"$numberDouble":"10"},{"$numberDouble":"9"},{"$numberDouble":"7"}],"curso":{"nome":"Moda"},"habilidades":[{"nome":"Alemão","nível":"Básico"}]}
+
 db.alunos.remove( {"_id": ObjectId("5e4a90d6eda41a47e9a79c8e")});
 
 db.alunos.find().pretty()
